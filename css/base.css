@@ -1,0 +1,611 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import url(http://fonts.googleapis.com/css?family=Lobster+Two:400,700,700italic,400italic);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic);
+/* line 5, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 22, ../sass/base.scss */
+* {
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-shadow: 1px 1px 1px #000;
+  outline: none;
+}
+
+/* line 23, ../sass/base.scss */
+a, span, p, h1, h2, h3, h4, div {
+  font-family: "Lobster Two", Verdana, sans-serif;
+}
+
+/* line 24, ../sass/base.scss */
+h1 {
+  font-size: 50px;
+  color: #efefee;
+  font-style: italic;
+  text-shadow: 3px 3px 3px #111;
+}
+
+/* line 26, ../sass/base.scss */
+a {
+  color: #efefee;
+  text-decoration: none;
+}
+/* line 29, ../sass/base.scss */
+a:hover {
+  text-decoration: underline;
+}
+
+/* line 31, ../sass/base.scss */
+body {
+  background-color: darkslategray;
+  background-image: url("../img/bg/noise.png");
+}
+
+/* line 39, ../sass/base.scss */
+.header {
+  padding: 40px;
+  text-align: center;
+  font-family: "Lobster Two", Verdana, sans-serif;
+}
+
+/* line 40, ../sass/base.scss */
+.navigation {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+/* line 42, ../sass/base.scss */
+.site {
+  width: 1024px;
+  margin: 0 auto;
+  min-height: 600px;
+}
+
+/* line 47, ../sass/base.scss */
+.carousel-trigger-right,
+.carousel-trigger-left {
+  font-family: "Lato", sans-serif;
+  letter-spacing: 1px;
+}
+
+/* line 52, ../sass/base.scss */
+.carousel-trigger-right,
+.carousel-trigger-left,
+.carousel-pager .page {
+  padding: 10px 20px;
+  font-size: 20px;
+  padding: 0.5em 1.5em;
+  display: inline-block;
+  cursor: pointer;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF315D94', endColorstr='#FF182D47');
+  background: -moz-linear-gradient(#749dd1, #315d94 50%, #14396a);
+  background: -webkit-linear-gradient(#749dd1, #315d94 50%, #14396a);
+  background: linear-gradient(#749dd1, #315d94 50%, #14396a);
+  -moz-box-shadow: #adc5e4 0 1px 0 inset;
+  -webkit-box-shadow: #adc5e4 0 1px 0 inset;
+  box-shadow: #adc5e4 0 1px 0 inset;
+  border: 1px solid #102d55;
+  color: white;
+  text-shadow: #264872 0 -1px 0;
+  cursor: pointer;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 15, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.carousel-trigger-right:hover,
+.carousel-trigger-left:hover,
+.carousel-pager .page:hover {
+  text-decoration: none;
+}
+/* line 24, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.carousel-trigger-right:hover,
+.carousel-trigger-left:hover,
+.carousel-pager .page:hover {
+  background-color: #14396a;
+  background: -moz-linear-gradient(#6c98ce, #14396a 50%, #0e2748);
+  background: -webkit-linear-gradient(#6c98ce, #14396a 50%, #0e2748);
+  background: linear-gradient(#6c98ce, #14396a 50%, #0e2748);
+}
+/* line 27, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.carousel-trigger-right:active,
+.carousel-trigger-left:active,
+.carousel-pager .page:active {
+  -moz-box-shadow: #0e2748 0 1px 2px inset;
+  -webkit-box-shadow: #0e2748 0 1px 2px inset;
+  box-shadow: #0e2748 0 1px 2px inset;
+}
+/* line 6, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.carousel-trigger-right.disabled, .carousel-trigger-right[disabled],
+.carousel-trigger-left.disabled,
+.carousel-trigger-left[disabled],
+.carousel-pager .page.disabled,
+.carousel-pager .page[disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background: #14396a;
+  cursor: default;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+/* line 74, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/sassy-buttons-0.2.6/stylesheets/_sassy-buttons.sass */
+.carousel-trigger-right::-moz-focus-inner,
+.carousel-trigger-left::-moz-focus-inner,
+.carousel-pager .page::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
+/* line 62, ../sass/base.scss */
+.carousel-trigger-right a,
+.carousel-trigger-left a,
+.carousel-pager .page a {
+  font-family: "Lato", sans-serif;
+}
+/* line 63, ../sass/base.scss */
+.carousel-trigger-right:hover,
+.carousel-trigger-left:hover,
+.carousel-pager .page:hover {
+  font-size: 20px;
+  padding: 0.5em 1.5em;
+  display: inline-block;
+  cursor: pointer;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF315D94', endColorstr='#FF182D47');
+  background: -moz-linear-gradient(#749dd1, #315d94 50%, #14396a);
+  background: -webkit-linear-gradient(#749dd1, #315d94 50%, #14396a);
+  background: linear-gradient(#749dd1, #315d94 50%, #14396a);
+  -moz-box-shadow: #adc5e4 0 1px 0 inset;
+  -webkit-box-shadow: #adc5e4 0 1px 0 inset;
+  box-shadow: #adc5e4 0 1px 0 inset;
+  border: 1px solid #102d55;
+  color: white;
+  text-shadow: #264872 0 -1px 0;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 15, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.carousel-trigger-right:hover:hover,
+.carousel-trigger-left:hover:hover,
+.carousel-pager .page:hover:hover {
+  text-decoration: none;
+}
+/* line 24, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.carousel-trigger-right:hover:hover,
+.carousel-trigger-left:hover:hover,
+.carousel-pager .page:hover:hover {
+  background-color: #14396a;
+  background: -moz-linear-gradient(#6c98ce, #14396a 50%, #0e2748);
+  background: -webkit-linear-gradient(#6c98ce, #14396a 50%, #0e2748);
+  background: linear-gradient(#6c98ce, #14396a 50%, #0e2748);
+}
+/* line 27, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.carousel-trigger-right:hover:active,
+.carousel-trigger-left:hover:active,
+.carousel-pager .page:hover:active {
+  -moz-box-shadow: #0e2748 0 1px 2px inset;
+  -webkit-box-shadow: #0e2748 0 1px 2px inset;
+  box-shadow: #0e2748 0 1px 2px inset;
+}
+/* line 6, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.carousel-trigger-right:hover.disabled, .carousel-trigger-right:hover[disabled],
+.carousel-trigger-left:hover.disabled,
+.carousel-trigger-left:hover[disabled],
+.carousel-pager .page:hover.disabled,
+.carousel-pager .page:hover[disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background: #14396a;
+  cursor: default;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+/* line 74, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/sassy-buttons-0.2.6/stylesheets/_sassy-buttons.sass */
+.carousel-trigger-right:hover::-moz-focus-inner,
+.carousel-trigger-left:hover::-moz-focus-inner,
+.carousel-pager .page:hover::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
+/* line 69, ../sass/base.scss */
+.carousel-trigger-right.active,
+.carousel-trigger-left.active,
+.carousel-pager .page.active {
+  font-size: 20px;
+  padding: 0.5em 1.5em;
+  display: inline-block;
+  cursor: pointer;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF315D94', endColorstr='#FF182D47');
+  background: -moz-linear-gradient(#749dd1, #315d94 50%, #14396a);
+  background: -webkit-linear-gradient(#749dd1, #315d94 50%, #14396a);
+  background: linear-gradient(#749dd1, #315d94 50%, #14396a);
+  -moz-box-shadow: #adc5e4 0 1px 0 inset;
+  -webkit-box-shadow: #adc5e4 0 1px 0 inset;
+  box-shadow: #adc5e4 0 1px 0 inset;
+  border: 1px solid #102d55;
+  color: white;
+  text-shadow: #264872 0 -1px 0;
+  background: #2274D7;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 15, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.carousel-trigger-right.active:hover,
+.carousel-trigger-left.active:hover,
+.carousel-pager .page.active:hover {
+  text-decoration: none;
+}
+/* line 24, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.carousel-trigger-right.active:hover,
+.carousel-trigger-left.active:hover,
+.carousel-pager .page.active:hover {
+  background-color: #14396a;
+  background: -moz-linear-gradient(#6c98ce, #14396a 50%, #0e2748);
+  background: -webkit-linear-gradient(#6c98ce, #14396a 50%, #0e2748);
+  background: linear-gradient(#6c98ce, #14396a 50%, #0e2748);
+}
+/* line 27, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.carousel-trigger-right.active:active,
+.carousel-trigger-left.active:active,
+.carousel-pager .page.active:active {
+  -moz-box-shadow: #0e2748 0 1px 2px inset;
+  -webkit-box-shadow: #0e2748 0 1px 2px inset;
+  box-shadow: #0e2748 0 1px 2px inset;
+}
+/* line 6, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.carousel-trigger-right.active.disabled, .carousel-trigger-right.active[disabled],
+.carousel-trigger-left.active.disabled,
+.carousel-trigger-left.active[disabled],
+.carousel-pager .page.active.disabled,
+.carousel-pager .page.active[disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background: #14396a;
+  cursor: default;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+/* line 74, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/sassy-buttons-0.2.6/stylesheets/_sassy-buttons.sass */
+.carousel-trigger-right.active::-moz-focus-inner,
+.carousel-trigger-left.active::-moz-focus-inner,
+.carousel-pager .page.active::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
+
+/* line 78, ../sass/base.scss */
+.carousel-pager, .page {
+  display: inline;
+}
+
+/* line 82, ../sass/base.scss */
+.page {
+  margin-left: 5px;
+}
+
+/* line 86, ../sass/base.scss */
+.page-1 {
+  margin-left: 0;
+}
+
+/*********** RELEVANT STUFF ***********/
+/* line 88, ../sass/base.scss */
+.carousel {
+  width: 800px;
+  min-height: 400px;
+  margin: 0 auto 100px auto;
+  position: relative;
+}
+
+/* line 95, ../sass/base.scss */
+.spin-container {
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  width: 100%;
+  height: 400px;
+  /* animation: spin 4s;
+  -webkit-animation: spin 4s;  */
+}
+
+/* line 102, ../sass/base.scss */
+.carousel-item {
+  width: 600px;
+  height: 400px;
+  border: 10px solid #111;
+  cursor: pointer;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
+  opacity: 0.75;
+  -moz-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+/* line 110, ../sass/base.scss */
+.carousel-item img {
+  width: 100%;
+  height: 380px;
+}
+/* line 111, ../sass/base.scss */
+.carousel-item .text {
+  position: absolute;
+  display: none;
+  width: 100%;
+  background: rgba(0, 65, 89, 0.7);
+  color: #efefee;
+  font-size: 15px;
+  font-family: "Lato", sans-serif;
+  line-height: 30px;
+  overflow: hidden;
+  padding: 10px 50px;
+  bottom: 20px;
+}
+/* line 125, ../sass/base.scss */
+.carousel-item.active {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+/* line 127, ../sass/base.scss */
+.carousel-item.active .text {
+  overflow: hidden;
+}
+/* line 129, ../sass/base.scss */
+.carousel-item:hover {
+  border: 10px solid #2A2A2A;
+}
+
+/*****************************************/
+/* line 134, ../sass/base.scss */
+.bottom {
+  width: 100%;
+  color: #efefee;
+}
+/* line 137, ../sass/base.scss */
+.bottom .left {
+  width: 30%;
+}
+/* line 138, ../sass/base.scss */
+.bottom .right {
+  width: 30%;
+}
+/* line 140, ../sass/base.scss */
+.bottom .right label {
+  margin-right: 10px;
+  float: right;
+}
+/* line 141, ../sass/base.scss */
+.bottom .right input {
+  float: right;
+  background: #315d94;
+}
+
+/* line 144, ../sass/base.scss */
+.small-text {
+  font-size: 12px;
+}
+
+/* line 148, ../sass/base.scss */
+.left {
+  float: left;
+}
+
+/* line 149, ../sass/base.scss */
+.right {
+  float: right;
+}
+
+/* line 150, ../sass/base.scss */
+.middle {
+  margin: 0 auto;
+  width: 40%;
+  float: left;
+}
+
+/* line 151, ../sass/base.scss */
+.download {
+  margin: 0 auto;
+  font-size: 26px;
+  padding: 0.5em 1.5em;
+  display: inline-block;
+  cursor: pointer;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF315D94', endColorstr='#FF182D47');
+  background: -moz-linear-gradient(#749dd1, #315d94 50%, #14396a);
+  background: -webkit-linear-gradient(#749dd1, #315d94 50%, #14396a);
+  background: linear-gradient(#749dd1, #315d94 50%, #14396a);
+  -moz-box-shadow: #adc5e4 0 1px 0 inset;
+  -webkit-box-shadow: #adc5e4 0 1px 0 inset;
+  box-shadow: #adc5e4 0 1px 0 inset;
+  border: 1px solid #102d55;
+  color: white;
+  text-shadow: #264872 0 -1px 0;
+  display: block;
+}
+/* line 15, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.download:hover {
+  text-decoration: none;
+}
+/* line 24, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.download:hover {
+  background-color: #14396a;
+  background: -moz-linear-gradient(#6c98ce, #14396a 50%, #0e2748);
+  background: -webkit-linear-gradient(#6c98ce, #14396a 50%, #0e2748);
+  background: linear-gradient(#6c98ce, #14396a 50%, #0e2748);
+}
+/* line 27, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.download:active {
+  -moz-box-shadow: #0e2748 0 1px 2px inset;
+  -webkit-box-shadow: #0e2748 0 1px 2px inset;
+  box-shadow: #0e2748 0 1px 2px inset;
+}
+/* line 6, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.download.disabled, .download[disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background: #14396a;
+  cursor: default;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+/* line 74, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/sassy-buttons-0.2.6/stylesheets/_sassy-buttons.sass */
+.download::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
+
+@-webkit-keyframes spin {
+  /* line 173, ../sass/base.scss */
+  0% {
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+
+  /* line 176, ../sass/base.scss */
+  100% {
+    -moz-transform: rotateY(360deg);
+    -ms-transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+@-moz-keyframes spin {
+  /* line 173, ../sass/base.scss */
+  0% {
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+
+  /* line 176, ../sass/base.scss */
+  100% {
+    -moz-transform: rotateY(360deg);
+    -ms-transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+@-ms-keyframes spin {
+  /* line 173, ../sass/base.scss */
+  0% {
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+
+  /* line 176, ../sass/base.scss */
+  100% {
+    -moz-transform: rotateY(360deg);
+    -ms-transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+@keyframes spin {
+  /* line 173, ../sass/base.scss */
+  0% {
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+
+  /* line 176, ../sass/base.scss */
+  100% {
+    -moz-transform: rotateY(360deg);
+    -ms-transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}

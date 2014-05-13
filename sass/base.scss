@@ -1,0 +1,180 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import 'compass/reset';
+@import 'compass/css3';
+@import 'sassy-buttons';
+
+@import url(http://fonts.googleapis.com/css?family=Lobster+Two:400,700,700italic,400italic);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic);
+
+//alternative layout breakpoints
+$mobile: 0px;
+$tablet: 768px;
+$computer: 960px;
+
+$color-white: #EFEFEE;
+$lobster-font : 'Lobster Two', Verdana, sans-serif;
+$lato-font : 'Lato', sans-serif;
+
+*{ margin: 0; padding: 0; @include box-sizing(border-box); text-shadow: 1px 1px 1px #000; outline: none; }
+a, span, p, h1, h2, h3, h4, div{  font-family: $lobster-font;  }
+h1{ font-size: 50px; color: $color-white; font-style: italic; text-shadow: 3px 3px 3px #111; }
+
+a{
+	color: $color-white;
+	text-decoration: none;
+	&:hover{ text-decoration: underline; }
+}
+body{
+	//background-color: #004159; 
+	background-color:darkslategray;
+	background-image: url('../img/bg/noise.png'); 
+}
+.top-content{ 
+
+}
+.header{ padding: 40px; text-align: center; font-family: $lobster-font; }
+.navigation{ text-align: center; margin-bottom: 100px; }
+
+.site{ 
+	width: 1024px;
+	margin: 0 auto;
+	min-height: 600px; 
+}
+.carousel-trigger-right,
+.carousel-trigger-left{
+	font-family: $lato-font;
+	letter-spacing: 1px;
+}
+.carousel-trigger-right,
+.carousel-trigger-left,
+.carousel-pager .page{
+	padding: 10px 20px;
+	//background: #0052A5;
+	//@include sassy-button("flat", 12px, 20px, #0052A5, #0052A5, $color-white, inset);
+	@include sassy-button("shiny", 15px, 20px, #315d94, #14396a, #FFFFFF);
+	cursor: pointer;
+	@include border-radius(5px);
+	
+	a{ font-family: $lato-font; }
+	&:hover{
+		//background: #3385D8;
+		@include sassy-button("shiny", 15px, 20px, #315d94, #14396a, #FFFFFF);
+
+		@include border-radius(5px);
+	}
+	&.active{
+		
+		@include sassy-button("shiny", 15px, 20px, #315d94, #14396a, #FFFFFF);
+		background: #2274D7;
+
+		@include border-radius(5px);
+	}
+	
+}
+.carousel-pager, .page{
+	display: inline;
+}
+
+.page {
+	margin-left: 5px;
+}
+
+.page-1{ margin-left: 0; }
+/*********** RELEVANT STUFF ***********/
+.carousel{
+	width: 800px;
+	min-height: 400px;
+	margin: 0 auto 100px auto;
+	position: relative;
+
+}
+.spin-container{
+	@include transition(all 0.5s ease-out);
+	width: 100%;
+	height: 400px;
+	/* animation: spin 4s;
+	-webkit-animation: spin 4s;  */
+}
+.carousel-item{
+	width: 600px;
+	height: 400px;
+	border: 10px solid #111;
+	cursor: pointer;
+	@include opacity(0.75);
+	@include transition(all 0.4s ease-out);
+
+	img{ width: 100%; height: 380px;; }
+	.text{ 
+		position: absolute;
+		display: none;
+		width: 100%; 
+		background: rgba(0, 65, 89, 0.7);
+		color: $color-white;
+		font-size: 15px; 
+		font-family: $lato-font;
+		line-height: 30px; 
+		overflow: hidden; 
+		padding: 10px 50px; 
+		bottom: 20px;
+	}
+	
+	&.active{
+		@include opacity(1);
+		.text{ overflow: hidden; }
+	}
+	&:hover{
+		border: 10px solid #2A2A2A;
+	}
+}
+/*****************************************/
+.bottom{ 
+	width: 100%;
+	color: $color-white; 
+	.left{ width: 30%; }
+	.right{ 
+		width: 30%; 
+		label{ margin-right: 10px; float:right; }
+		input{ float: right; background: #315d94; }
+	}
+}
+.small-text{
+	font-size: 12px;
+}
+
+.left{ float: left; }
+.right{ float: right; }
+.middle{ margin: 0 auto; width: 40%; float: left;  }
+.download{ 
+	margin: 0 auto;
+	@include sassy-button("shiny", 15px, 26px, #315d94, #14396a, #FFFFFF);
+	display: block;
+}
+// keyframes mixin
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}
+
+@include keyframes(spin) {
+  0% {
+	@include transform(rotateY(0deg));
+  }
+  100% {
+    @include transform(rotateY(360deg));
+  } 
+}
+
