@@ -1,6 +1,6 @@
 
 jQuery(document).ready(function(){
-	Indigio.css3Carousel.init({
+	Indigio.Css3Carousel.init({
 		'rotationCallback' : function(){
 			$('.carousel-item .text').hide();
 			$('.carousel-item.active .text').fadeIn(1500);

@@ -2,7 +2,7 @@
 var Indigio = window.Indigio || {};
 
 // create my plugin
-Indigio.css3Carousel = {
+Indigio.Css3Carousel = {
 
 	currentItemIndex: 0,
 	degFactor : 0,
@@ -11,6 +11,7 @@ Indigio.css3Carousel = {
 	carousel : null,
 	spinner: null,
 	items : null,
+	itemsLength : 0,
 	pager: null,
 	activeItem: null,
 	options: {
@@ -26,7 +27,6 @@ Indigio.css3Carousel = {
 		'rotationCallback': null
 	},
 
-
 	init: function (options) {
 		var that = this;
 		var transformDegrees = 0;
@@ -37,14 +37,15 @@ Indigio.css3Carousel = {
 		this.spinner = $(this.options.spinnerClass);
 		this.items = $(this.options.carouselClass+' '+this.options.itemClass);
 		this.items.css('position','absolute');
+		this.itemsLength = this.items.length;
+		
 		// Set first element as active
 		this.activeItem = this.items.first().addClass('active');
 		
 		this.canvasWidth = this.carousel.width();
-		this.degFactor = 360 / this.items.length;
+		this.degFactor = 360 / this.itemsLength;
 
 		if(this.options.radius < 1){ this.options.radius = this.items.outerWidth();	}
-		
 		
 		this.createCSS3(this.items, 'transform-style', 'preserve-3d');
 		
@@ -56,7 +57,7 @@ Indigio.css3Carousel = {
 		this.createCSS3(this.spinner, 'transform-origin', '50% 50% -'+this.options.radius+'px');
 		
 		// this.createCSS3(carousel, 'perspective-origin', '43% -15%');
-		this.items.each(function(i){
+		$.each(this.items, function(i){
 			that.createCSS3(this, 'transform', 'rotateY('+transformDegrees+'deg)');
 			that.createCSS3(this, 'transform-origin', '50% 50% -'+that.options.radius+'px'); 
 			// Center Image
@@ -98,12 +99,12 @@ Indigio.css3Carousel = {
 	
 	displayPager: function(){
 		var appendClass = this.options.pagerIndexName;
-		var appendStr = "<li class='"+appendClass+"'></li>"
+		var appendStr = "";
 		
-		for(i=0; i < this.items.length; i++){
-			appendStr = "<li data-item-nr='"+i+"' class='"+appendClass+" "+appendClass+"-"+(i+1)+"'><a href='#'>"+(i+1)+"</a></li>"
-			this.pager.append(appendStr);
+		for(i=0; i < this.itemsLength; i++){
+			appendStr += "<li data-item-nr='"+i+"' class='"+appendClass+" "+appendClass+"-"+(i+1)+"'><a href='#'>"+(i+1)+"</a></li>"
 		}
+		this.pager.append(appendStr);
 	},
 	
 	rotate: function(steps){
@@ -145,21 +146,14 @@ Indigio.css3Carousel = {
 		degreesToTurn = steps * this.degFactor;
 		// + and - don't matter
 		this.spinnerDegrees += degreesToTurn;
-				
-		console.log("Steps: " + steps);
-		console.log("---------Degrees to turn-------->  "+degreesToTurn);
 	
 		this.activeItem =  $(this.options.itemClass+'.active');
 
-		console.log("Spinner degs"+this.spinnerDegrees);
-		
 		this.createCSS3(this.spinner, 'transform', 'rotateY('+this.spinnerDegrees+'deg)');
-		this.currentItemIndex = $(this.activeItem).index();
+		this.currentItemIndex = this.activeItem.index();
 		if(this.options.createPager){
-			$("."+this.options.pagerIndexName).removeClass('active');
-			$("."+this.options.pagerIndexName).eq(this.currentItemIndex).addClass('active');
+			$("."+this.options.pagerIndexName).removeClass('active').eq(this.currentItemIndex).addClass('active');
 		}
-		console.log("Current Itemindex: "+this.currentItemIndex);
 		
 		if(this.options.rotationCallback != null){
 			this.options.rotationCallback();
@@ -178,14 +172,6 @@ Indigio.css3Carousel = {
 			
 			pagerIndex = $(this).index();	
 			steps =  pagerIndex - that.currentItemIndex;	
-
-			// Find shortest way
-			if(that.currentItemIndex + that.items.length / 2 < pagerIndex){		
-				console.log("Go left");
-			}else{
-				console.log("Go right!");
-			}
-
 			that.rotate(steps);
 		});
 	}
